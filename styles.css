@@ -26,6 +26,38 @@ h1 {
 }
 
 .error {
-    display: none; /* Hidden by default */
+    display: none;
+    /* Hidden by default */
     color: rgb(206, 77, 77);
+}
+
+.modal {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Stay in place */
+    z-index: 1;
+    /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+    background-color: rgb(0, 0, 0);
+    /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.9);
+    /* Black w/ opacity */
+}
+
+.modal-content {
+    align-content: center;
+    margin: auto;
+    display: block;
+    width: 60%;
+    max-width: 540px;
+}
+
+.modal-title {
+    font-size: 80px;
 }

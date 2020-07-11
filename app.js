@@ -10,7 +10,9 @@ function shuffleArray(array) {
 }
 var random = shuffleArray(numbers);
 console.log(random);
-
+$("button").click(function(){
+    location.reload(true);
+});
 $(document).on('keyup', function (e) {
     var regEx = /^[0-9]*$/g;
     
@@ -35,6 +37,9 @@ $(document).on('keyup', function (e) {
     }
     if (e.which === 13) {
         e.preventDefault();   // Don't submit the form
+        if (random === number){
+            $(".modal").show();            
+        }
         for (i = 0; i < number.length; i++) {
             if (random.includes(number[i])) {
                 pica++;
