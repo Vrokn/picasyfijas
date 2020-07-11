@@ -54,7 +54,7 @@ $(document).on('keyup', function (e) {
             '<td class="text-center">' + fija + '</td>' +
             '</tr>'
         );
-        if (number.length !== 4 || parseInt(number) === isNaN) {
+        if (number.length !== 4 || isNaN( parseInt(number) ) ) {
             $("#mensaje4").show();
         } else {
             $('table').prepend(tr);        // append this.value
