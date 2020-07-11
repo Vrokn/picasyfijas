@@ -48,6 +48,8 @@ h1 {
     /* Fallback color */
     background-color: rgba(0, 0, 0, 0.9);
     /* Black w/ opacity */
+    align-content: center;
+    align-items: center;
 }
 
 .modal-content {
@@ -56,6 +58,7 @@ h1 {
     display: block;
     width: 60%;
     max-width: 540px;
+    align-items: center;
 }
 
 .modal-title {
