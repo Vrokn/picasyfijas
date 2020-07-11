@@ -20,6 +20,12 @@ body {
     width: 400px;
     padding: 10px;
 }
-h1{
+
+h1 {
     padding: 20px;
+}
+
+.error {
+    display: none; /* Hidden by default */
+    color: rgb(206, 77, 77);
 }

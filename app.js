@@ -12,64 +12,46 @@ var random = shuffleArray(numbers);
 console.log(random);
 
 $(document).on('keyup', function (e) {
-    var mensaje1 = ('<p>El número no puede tener dígitos repetidos</p>');
-    var mensaje2 = ('<p>El número no puede tener más de 4 dígitos</p>');
-    var mensaje3 = ('<p>Use solo números</p>');
-    var mensaje4 = ('<p>Por favor ingrese un número de 4 dígitos</p>');
+    var regEx = /^[0-9]*$/g;
+    
     var number = $('#input').val();
     var pica = 0;
     var fija = 0;
-    var tr = ('<tr>' +
-        '<td class="text-center">' + number + '</td>' +
-        '<td class="text-center">' + pica + '</td>' +
-        '<td class="text-center">' + fija + '</td>' +
-        '</tr>'
-    );
-    console.log(number.length);
-
     if (number === '') {
-        $('#input').addClass("has-error");
-        ($('#input').parent()).addClass("has-error");
-        $('#input').append(mensaje4);
+        $("#mensaje4").show();
+    } else if (!regEx.test(number)) {
+        $("#mensaje3").show();
+    } else if (number.length > 4) {
+        $("#mensaje2").show();
     } else {
-        $('#input').removeClass("has-error");
-        ($('#input').parent()).removeClass("has-error");
-    }
-    if (number === NaN) {
-        $('#input').addClass("has-error");
-        ($('#input').parent()).addClass("has-error");
-        $('#input').append(mensaje3);
-    } else {
-        $('#input').removeClass("has-error");
-        ($('#input').parent()).removeClass("has-error");
-    }
-    if (number.length > 4) {
-        $('#input').addClass("has-error");
-        ($().parent()).addClass("has-error");
-        $('#input').append(mensaje2);
-    } else {
-        $('#input').removeClass("has-error");
-        ($('#input').parent()).removeClass("has-error");
+        $(".error").hide();
     }
     for (i = 0; i < number.length; i++) {
-        if (number[i] === number[i + 1]) {
-            $('#input').append(mensaje1);
-            $('#input').addClass("has-error");
-            ($('#input').parent()).addClass("has-error");
-        } else {
-            $('#input').removeClass("has-error");
-            ($('#input').parent()).removeClass("has-error");
-        }
-        if (random.includes(number[i])) {
-            pica++;
-        }
-        if (number[i] === random[i]) {
-            fija++;
+        for (j = i + 1; j < number.length; j++) {
+            if (number[i] === number[j]) {
+                $("#mensaje1").show();
+            }
         }
     }
     if (e.which === 13) {
         e.preventDefault();   // Don't submit the form
-        $('table').append(tr);        // append this.value
+        for (i = 0; i < number.length; i++) {
+            if (random.includes(number[i])) {
+                pica++;
+            }
+            console.log('picas', pica);
+            if (number[i] === random[i]) {
+                fija++;
+                pica--;
+            }
+        }
+        var tr = ('<tr>' +
+            '<td class="text-center">' + number + '</td>' +
+            '<td class="text-center">' + pica + '</td>' +
+            '<td class="text-center">' + fija + '</td>' +
+            '</tr>'
+        );
+        $('table').prepend(tr);        // append this.value
         $('#input').val('');  // reset the value field
     }
 });
