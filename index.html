@@ -10,37 +10,42 @@
 
 </head>
 
-<body>
-    <div class="container-sm">
-        <h1>¡PICAS Y FIJAS!</h1>
-        <p>Ingresa 4 números diferentes y oprime 'Enter'</p>
-        <input type="text" id="input" placeholder="Ingresa tu número">
-        <hr>
-        <p class="error" id="mensaje1">El número no puede tener dígitos repetidos</p>
-        <p class="error" id="mensaje2">El número no puede tener más de 4 dígitos</p>
-        <p class="error" id="mensaje3">Use solo números</p>
-        <p class="error" id="mensaje4">Por favor ingrese un número de 4 dígitos</p>
-        <div class='wrapper'>
-            <table class="table table-bordered table-dark">
-                <thead class="thead-dark">
-                    <tr>
-                        <th class="text-center">Número</th>
-                        <th class="text-center">Picas</th>
-                        <th class="text-center">Fijas</th>
-                    </tr>
-                </thead>
-                <tbody>
+<body class="p-5">
+    <div class="container-fluid">
+        <div class="row justify-content-between">
+            <div class="row-sm col-md">
+                <h1>¡PICAS Y FIJAS!</h1>
+                <p>Ingresa 4 números diferentes y oprime 'Enter'</p>
+                <input type="text" id="input" placeholder="Ingresa tu número">
+                <hr>
+                <p class="error" id="mensaje1">El número no puede tener dígitos repetidos</p>
+                <p class="error" id="mensaje2">El número no puede tener más de 4 dígitos</p>
+                <p class="error" id="mensaje3">Use solo números</p>
+                <p class="error" id="mensaje4">Por favor ingrese un número de 4 dígitos</p>
+                <div class='wrapper'>
+                    <table class="table table-bordered table-dark">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th class="text-center">Número</th>
+                                <th class="text-center">Picas</th>
+                                <th class="text-center">Fijas</th>
+                            </tr>
+                        </thead>
+                        <tbody>
 
-                </tbody>
-            </table>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
         </div>
     </div>
+
 
     <div id="myModal" class="modal">
         <h1 class="modal-title">¡ GANASTE !</h1>
         <button type="button" class="btn btn-outline-success btn-lg">Jugar de nuevo</button>
     </div>
-    
+
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
         integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
         crossorigin="anonymous"></script>

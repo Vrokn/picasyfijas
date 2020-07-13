@@ -54,8 +54,18 @@ $(document).on('keyup', function (e) {
             '<td class="text-center">' + fija + '</td>' +
             '</tr>'
         );
-        if (number.length !== 4 || isNaN( parseInt(number) ) ) {
+        var err = false;
+        for (i = 0; i < number.length; i++) {
+            for (j = i + 1; j < number.length; j++) {
+                if (number[i] === number[j]) {
+                    err = true;
+                }
+            }
+        }
+        if (number.length !== 4 || isNaN(parseInt(number))) {
             $("#mensaje4").show();
+        } else if (err) {
+            $("#mensaje1").show();
         } else {
             $('table').prepend(tr);        // append this.value
             $('#input').val('');  // reset the value field
