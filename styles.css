@@ -6,8 +6,9 @@ body {
 
 #input {
     font-size: 16px;
-    width: 40%;
+    width: 30%;
     padding: 10px;
+    max-width: 250px;
     border: 1px solid #ddd;
     border-radius: 5px;
 }
@@ -18,6 +19,7 @@ body {
     text-align: center;
     font-size: 16px;
     width: 60%;
+    max-width: 5    00px;
     padding: 10px;
 }
 
